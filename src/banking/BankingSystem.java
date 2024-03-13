@@ -16,8 +16,32 @@ public class BankingSystem {
             System.out.println("5. View Balance");
             System.out.println("6. Exit");
             System.out.println("Enter your choice: ");
-            int choice = scanner.nextInt();
+            int choice = scanner.nextInt(); // User inputs their choice, we read it from Standard Input with Scanner class, and execute one of below operations based on the input.
+
+            switch (choice) {
+                case 1:
+                    System.out.println("Choice 1");
+                    break;
+                case 2:
+                    System.out.println("Choice 2");
+                    break;
+                case 3:
+                    System.out.println("Choice 3");
+                    break;
+                case 4:
+                    System.out.println("Choice 4");
+                    break;
+                case 5:
+                    System.out.println("Choice 5");
+                    break;
+                case 6:
+                    System.out.println("Choice 6");
+                    break;
+                default:
+                    System.out.println("Invalid choice");
+            }
         }
+        scanner.close(); // Close scanner before exiting.
     }
 }
 

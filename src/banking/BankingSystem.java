@@ -77,11 +77,11 @@ public class BankingSystem {
                     }
                 case 7:
                     System.out.println("All Accounts:");
-                    for (Account acc : accounts) {
-                        if (acc != null) {
-                            System.out.println("Account Number: " + acc.accountNumber);
-                            System.out.println("Owner's Name: " + acc.ownerName);
-                            System.out.println("Balance: " + acc.balance);
+                    for (Account account : accounts) {
+                        if (account != null) {
+                            System.out.println("Account Number: " + account.accountNumber);
+                            System.out.println("Owner's Name: " + account.ownerName);
+                            System.out.println("Balance: " + account.balance);
                             System.out.println();
                         }
                     }

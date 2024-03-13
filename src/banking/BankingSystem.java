@@ -49,7 +49,11 @@ public class BankingSystem {
                     accounts[accNumber - 1].deposit(depositAmount); // We use accNumber - 1 because we increment totalAccounts value by 1 when assigning an accountNumber to a newly created Account in each instance. This is because array indexes start from 0.
                     break;
                 case 4:
-                    System.out.println("Choice 4");
+                    System.out.print("Enter account number: ");
+                    accNumber = scanner.nextInt();
+                    System.out.print("Enter withdrawal amount: ");
+                    double withdrawAmount = scanner.nextDouble();
+                    accounts[accNumber - 1].withdraw(withdrawAmount); // Same reason as in case 3 - we decrement accNumber by 1 to retrieve the correct account from accounts array for the above reason.
                     break;
                 case 5:
                     System.out.println("Choice 5");

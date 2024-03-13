@@ -15,4 +15,10 @@ class Account {
     protected double balance;
     protected static int totalAccounts = 0;
 
+    public Account(String ownerName, double initialDeposit) {
+        this.ownerName = ownerName;
+        this.balance = initialDeposit;
+        this.accountNumber = totalAccounts++; // totalAccounts value is incremented by 1 in order to assign a unique account number to each newly created account.
+    }
+
 }

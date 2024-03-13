@@ -5,6 +5,8 @@ public class BankingSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Account[] accounts = new Account[5];
+        double initialDeposit = 0; // Set to 0 for now as default value - will be reassigned inside switch case statements.
+        String name = ""; // Set to empty string for now as default value - will be reassigned inside switch case statements.
 
         // Menu loop
         boolean exit = false;
@@ -22,15 +24,22 @@ public class BankingSystem {
                 case 1:
                     System.out.print("Enter owner's name: ");
                     scanner.nextLine(); // Consume newLine;
-                    String name = scanner.nextLine();
+                    name = scanner.nextLine();
                     System.out.print("Enter initial deposit: ");
-                    double initialDeposit = scanner.nextDouble();
+                    initialDeposit = scanner.nextDouble();
                     System.out.print("Enter interest rate: ");
                     double interestRate = scanner.nextDouble();
                     accounts[Account.getTotalAccounts()] = new SavingsAccount(name, initialDeposit, interestRate);
                     break;
                 case 2:
-                    System.out.println("Choice 2");
+                    System.out.print("Enter owner's name: ");
+                    scanner.nextLine(); // Consume newLine
+                    name = scanner.nextLine();
+                    System.out.print("Enter initial deposit: ");
+                    initialDeposit = scanner.nextDouble();
+                    System.out.print("Enter overdraft limit: ");
+                    double overdraftLimit = scanner.nextDouble();
+                    accounts[Account.getTotalAccounts()] = new CheckingAccount(name, initialDeposit, overdraftLimit);
                     break;
                 case 3:
                     System.out.println("Choice 3");

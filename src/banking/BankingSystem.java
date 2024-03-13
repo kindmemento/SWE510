@@ -21,4 +21,8 @@ class Account {
         this.accountNumber = totalAccounts++; // totalAccounts value is incremented by 1 in order to assign a unique account number to each newly created account.
     }
 
+    public void deposit() {};
+    public void withdraw() {};
+    public double getBalance() { return 0.0; }; // placeholder value
+    public static int getTotalAccounts() { return 1; }; // placeholder value
 }

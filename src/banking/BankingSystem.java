@@ -42,7 +42,11 @@ public class BankingSystem {
                     accounts[Account.getTotalAccounts()] = new CheckingAccount(name, initialDeposit, overdraftLimit);
                     break;
                 case 3:
-                    System.out.println("Choice 3");
+                    System.out.print("Enter account number: ");
+                    int accNumber = scanner.nextInt();
+                    System.out.print("Enter deposit amount: ");
+                    double depositAmount = scanner.nextDouble();
+                    accounts[accNumber - 1].deposit(depositAmount); // We use accNumber - 1 because we increment totalAccounts value by 1 when assigning an accountNumber to a newly created Account in each instance. This is because array indexes start from 0.
                     break;
                 case 4:
                     System.out.println("Choice 4");

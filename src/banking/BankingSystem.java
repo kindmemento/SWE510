@@ -31,6 +31,10 @@ class Account {
             balance -= amount; // If they have sufficient funds, we decrement the amount to be withdrawn from existing balance.
         }
     }
-    public double getBalance() { return 0.0; }
+    public double getBalance() {
+        return balance;
+        // We keep balance variable itself protected, and display balance through a public getBalance method,
+        // because we don't want to grant access to the variable from outside the scope of the class, as that would expose it for modification/mutation from outside the class scope.
+    }
     public static int getTotalAccounts() { return 1; } // placeholder value
 }

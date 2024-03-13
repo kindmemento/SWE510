@@ -10,4 +10,9 @@ public class BankingSystem {
 
 // Empty Account class layout
 class Account {
+    protected int accountNumber;
+    protected String ownerName;
+    protected double balance;
+    protected static int totalAccounts = 0;
+
 }

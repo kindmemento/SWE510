@@ -43,6 +43,18 @@ class Account {
     }
 }
 
-class SavingsAccount extends Account { }
+class SavingsAccount extends Account {
+    private double interestRate;
+
+    public SavingsAccount(String ownerName, double initialDeposit, double interestRate) {
+        super(ownerName, initialDeposit); // We call super method because this is a subclass that extends a super class.
+        this.interestRate = interestRate; // this.interestRate is the private interestRate variable declared inside the scope of this subclass. interestRate parameter is passed as input, and its value is assigned to this.interestRate;
+    }
+
+    public void calculateInterest() {
+        double interest = balance * interestRate / 100; // This is where interest is calculated;
+        deposit(interest); // deposit method is derived from super class Account;
+    }
+}
 
 class CheckingAccount extends Account { }

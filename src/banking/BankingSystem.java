@@ -20,7 +20,14 @@ public class BankingSystem {
 
             switch (choice) {
                 case 1:
-                    System.out.println("Choice 1");
+                    System.out.print("Enter owner's name: ");
+                    scanner.nextLine(); // Consume newLine;
+                    String name = scanner.nextLine();
+                    System.out.print("Enter initial deposit: ");
+                    double initialDeposit = scanner.nextDouble();
+                    System.out.print("Enter interest rate: ");
+                    double interestRate = scanner.nextDouble();
+                    accounts[Account.getTotalAccounts()] = new SavingsAccount(name, initialDeposit, interestRate);
                     break;
                 case 2:
                     System.out.println("Choice 2");

@@ -61,7 +61,7 @@ public class BankingSystem {
                     System.out.println("Balance: " + accounts[accNumber - 1].getBalance());
                     break;
                 case 6:
-                    System.out.println("Choice 6");
+                    exit = true; // When exit it set to true, it will break out of the while loop, meaning exiting the program.
                     break;
                 default:
                     System.out.println("Invalid choice");

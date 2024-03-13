@@ -23,14 +23,14 @@ class Account {
 
     public void deposit(double amount) {
         balance += amount; // Amount parameter is the total amount that is to be added to the existing balance, therefore we increment balance value by amount value.
-    };
+    }
     public void withdraw(double amount) {
         if (amount > balance) {
             System.out.println("Insufficient funds!"); // If amount is greater than existing balance, user/owner wants to withdraw more money than they possess. So we display an error message.
         } else {
             balance -= amount; // If they have sufficient funds, we decrement the amount to be withdrawn from existing balance.
         }
-    };
-    public double getBalance() { return 0.0; }; // placeholder value
-    public static int getTotalAccounts() { return 1; }; // placeholder value
+    }
+    public double getBalance() { return 0.0; }
+    public static int getTotalAccounts() { return 1; } // placeholder value
 }

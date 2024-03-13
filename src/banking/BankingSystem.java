@@ -42,3 +42,7 @@ class Account {
         // Instead, the integer value of total number of accounts is accessible through this public getTotalAccounts method.
     }
 }
+
+class SavingsAccount extends Account { }
+
+class CheckingAccount extends Account { }

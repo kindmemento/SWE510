@@ -1,3 +1,5 @@
+package banking;
+
 import java.util.Scanner; // Import Scanner class to receive input from user through Standard Input
 
 // Main class for entire Banking System

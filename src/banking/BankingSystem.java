@@ -18,7 +18,8 @@ public class BankingSystem {
             System.out.println("3. Deposit");
             System.out.println("4. Withdraw");
             System.out.println("5. View Balance");
-            System.out.println("6. Exit");
+            System.out.println("6. Calculate Compound Interest for Savings Account");
+            System.out.println("7. Exit");
             System.out.println("Enter your choice: ");
             int choice = scanner.nextInt(); // User inputs their choice, we read it from Standard Input with Scanner class, and execute one of below operations based on the input.
 
@@ -63,6 +64,15 @@ public class BankingSystem {
                     System.out.println("Balance: " + accounts[accNumber - 1].getBalance());
                     break;
                 case 6:
+                    System.out.print("Enter account number: ");
+                    accNumber = scanner.nextInt();
+                    if (accounts[accNumber - 1] instanceof SavingsAccount) {
+                        // We use type casting to treat the account as a Savings Account in order to have access to InterestCalculator static class and its method calculateInterest.
+                        ((SavingsAccount) accounts[accNumber - 1]).calculateInterest();
+                    } else {
+                        System.out.println("This is not a savings account!");
+                    }
+                case 7:
                     exit = true; // When exit it set to true, it will break out of the while loop, meaning exiting the program.
                     break;
                 default:

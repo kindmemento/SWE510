@@ -1,5 +1,4 @@
 import java.util.Scanner; // Import Scanner class to receive input from user through Standard Input
-import java.util
 
 // Main class for entire Banking System
 public class BankingSystem {
@@ -9,7 +8,6 @@ public class BankingSystem {
     }
 }
 
-// Empty Account class layout
 class Account {
     protected int accountNumber;
     protected String ownerName;

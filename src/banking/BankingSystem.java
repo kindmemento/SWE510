@@ -67,9 +67,11 @@ public class BankingSystem {
                 case 6:
                     System.out.print("Enter account number: ");
                     accNumber = scanner.nextInt();
+                    Account acc = accounts[accNumber - 1];
                     if (accounts[accNumber - 1] instanceof SavingsAccount) {
                         // We use type casting to treat the account as a Savings Account in order to have access to InterestCalculator static class and its method calculateInterest.
-                        ((SavingsAccount) accounts[accNumber - 1]).calculateInterest();
+                        SavingsAccount savingsAcc = (SavingsAccount) acc;
+                        SavingsAccount.InterestCalculator.calculateCompoundInterest(savingsAcc);
                     } else {
                         System.out.println("This is not a savings account!");
                     }

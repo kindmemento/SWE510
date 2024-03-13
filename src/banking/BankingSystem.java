@@ -1,4 +1,5 @@
 import java.util.Scanner; // Import Scanner class to receive input from user through Standard Input
+import java.util
 
 // Main class for entire Banking System
 public class BankingSystem {
@@ -57,4 +58,20 @@ class SavingsAccount extends Account {
     }
 }
 
-class CheckingAccount extends Account { }
+class CheckingAccount extends Account {
+    private double overdraftLimit;
+
+    public CheckingAccount(String ownerName, double initialDeposit, double overdraftLimit) {
+        super(ownerName, initialDeposit); // We call super method because this is a subclass that extends a super class.
+        this.overdraftLimit = overdraftLimit; // Similar to SavingsAccount subclass, this.overdraftLimit variable is declared inside the scope of this subclass, and overdraftLimit parameter is passed as input, and its value is assigned to the variable overdraftLimit, which itself is a member of this class.
+    }
+
+    @Override
+    public void withdraw(double amount) {
+        if (amount > balance + overdraftLimit) {
+            System.out.println("Exceeds overdraft limit!"); // Amount to withdraw cannot be more than existing balance + overdraftLimit. If that is the case, we display an error message.
+        } else {
+            balance -= amount;
+        }
+    }
+}

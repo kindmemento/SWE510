@@ -9,6 +9,7 @@ public class BankingSystem {
         Account[] accounts = new Account[5];
         double initialDeposit = 0; // Set to 0 for now as default value - will be reassigned inside switch case statements.
         String name = ""; // Set to empty string for now as default value - will be reassigned inside switch case statements.
+        int accNumber;
 
         // Menu loop
         boolean exit = false;
@@ -47,7 +48,7 @@ public class BankingSystem {
                     break;
                 case 3:
                     System.out.print("Enter account number: ");
-                    int accNumber = scanner.nextInt();
+                    accNumber = scanner.nextInt();
                     System.out.print("Enter deposit amount: ");
                     double depositAmount = scanner.nextDouble();
                     accounts[accNumber - 1].deposit(depositAmount); // We use accNumber - 1 because we increment totalAccounts value by 1 when assigning an accountNumber to a newly created Account in each instance. This is because array indexes start from 0.

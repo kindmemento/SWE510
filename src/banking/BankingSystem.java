@@ -119,6 +119,26 @@ class SavingsAccount extends Account {
         double interest = balance * interestRate / 100; // This is where interest is calculated;
         deposit(interest); // deposit method is derived from super class Account;
     }
+
+    static class InterestCalculator {
+        public static void calculateCompoundInterest(SavingsAccount account) {
+            Scanner scanner = new Scanner(System.in);
+            System.out.print("Enter number of years: ");
+            int years = scanner.nextInt();
+            scanner.close();
+            double compoundInterest = calculateInterestRecursive(account.balance, account.interestRate, years);
+            System.out.println("Compound interest after " + years + " years: " + compoundInterest);
+        }
+
+        private static double calculateInterestRecursive(double principal, double rate, int years) {
+            if (years == 0) return principal;
+            return calculateInterestRecursive(principal * (1 + rate / 100), rate, years - 1);
+            // Parameters change for the recursive call to update the state of the calculation for the subsequent recursive step.
+            // (i + rate / 100) calculates the new principal after adding the interest earned in one year.
+            // Interest rate remains constant, as it represents the annual interest rate in percentage terms.
+            // Years parameter is decremented by 1 in each recursive call to represent the passing of time.
+        }
+    }
 }
 
 class CheckingAccount extends Account {

@@ -56,7 +56,9 @@ public class BankingSystem {
                     accounts[accNumber - 1].withdraw(withdrawAmount); // Same reason as in case 3 - we decrement accNumber by 1 to retrieve the correct account from accounts array for the above reason.
                     break;
                 case 5:
-                    System.out.println("Choice 5");
+                    System.out.print("Enter account number: ");
+                    accNumber = scanner.nextInt();
+                    System.out.println("Balance: " + accounts[accNumber - 1].getBalance());
                     break;
                 case 6:
                     System.out.println("Choice 6");

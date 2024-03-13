@@ -36,5 +36,9 @@ class Account {
         // We keep balance variable itself protected, and display balance through a public getBalance method,
         // because we don't want to grant access to the variable from outside the scope of the class, as that would expose it for modification/mutation from outside the class scope.
     }
-    public static int getTotalAccounts() { return 1; } // placeholder value
+    public static int getTotalAccounts() {
+        return totalAccounts;
+        // Similar to above, totalAccounts variable itself is kept protected within the scope of the class in order to not expose it for modification and mutation from outside the class.
+        // Instead, the integer value of total number of accounts is accessible through this public getTotalAccounts method.
+    }
 }

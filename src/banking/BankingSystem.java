@@ -5,6 +5,19 @@ public class BankingSystem {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         Account[] accounts = new Account[5];
+
+        // Menu loop
+        boolean exit = false;
+        while (!exit) {
+            System.out.println("1. Create Savings Account");
+            System.out.println("2. Create Checking Account");
+            System.out.println("3. Deposit");
+            System.out.println("4. Withdraw");
+            System.out.println("5. View Balance");
+            System.out.println("6. Exit");
+            System.out.println("Enter your choice: ");
+            int choice = scanner.nextInt();
+        }
     }
 }
 

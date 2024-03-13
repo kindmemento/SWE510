@@ -19,7 +19,8 @@ public class BankingSystem {
             System.out.println("4. Withdraw");
             System.out.println("5. View Balance");
             System.out.println("6. Calculate Compound Interest for Savings Account");
-            System.out.println("7. Exit");
+            System.out.println("7. View All Accounts");
+            System.out.println("8. Exit");
             System.out.println("Enter your choice: ");
             int choice = scanner.nextInt(); // User inputs their choice, we read it from Standard Input with Scanner class, and execute one of below operations based on the input.
 
@@ -73,6 +74,17 @@ public class BankingSystem {
                         System.out.println("This is not a savings account!");
                     }
                 case 7:
+                    System.out.println("All Accounts:");
+                    for (Account acc : accounts) {
+                        if (acc != null) {
+                            System.out.println("Account Number: " + acc.accountNumber);
+                            System.out.println("Owner's Name: " + acc.ownerName);
+                            System.out.println("Balance: " + acc.balance);
+                            System.out.println();
+                        }
+                    }
+                    break;
+                case 8:
                     exit = true; // When exit it set to true, it will break out of the while loop, meaning exiting the program.
                     break;
                 default:

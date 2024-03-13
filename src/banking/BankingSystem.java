@@ -94,7 +94,7 @@ public class BankingSystem {
                     System.out.println("Invalid choice");
             }
         }
-        scanner.close(); // Close scanner before exiting.
+        scanner.close(); // Close the scanner after exiting the while loop.
     }
 }
 

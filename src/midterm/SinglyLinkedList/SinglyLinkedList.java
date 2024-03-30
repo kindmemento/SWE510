@@ -45,6 +45,14 @@ public class SinglyLinkedList<V> {
         return curr;
     }
 
+    public V get(int index) {
+        ListNode<V> node = at(index);
+        if (node != null) {
+            return node.value;
+        }
+        return null;
+    }
+
     public void remove() throws NullPointerException {
         ListNode<V> elToRemove = at(length - 1);
         elToRemove.next = null;

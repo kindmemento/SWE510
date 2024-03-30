@@ -13,7 +13,7 @@ public class SortedLinkedListSearch {
 
         System.out.println("Enter integers for the sorted linked list (separate with spaces):");
         String input = scanner.nextLine();
-        String[] inputArray = input.split("\\s+");
+        String[] inputArray = input.split("\\s+"); // RegEx delimiter is for splitting the single-line input string into substrings. \\s+ matches one or more whitespace characters.
 
         // Parse the input and add integers to the sorted linked list
         for (String num : inputArray) {

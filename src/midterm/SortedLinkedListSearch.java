@@ -1,10 +1,30 @@
 package midterm;
 
 import midterm.SinglyLinkedList.SinglyLinkedList;
+import java.util.Scanner;
 
 public class SortedLinkedListSearch {
     public static void main(String[] args) {
-        // @TODO: Implement main method
+        // Scanner object to read input from the standard input
+        Scanner scanner = new Scanner(System.in);
+
+        // Empty sorted linked list
+        SinglyLinkedList<Integer> list = new SinglyLinkedList<>();
+
+        System.out.println("Enter integers for the sorted linked list (separate with spaces):");
+        String input = scanner.nextLine();
+        String[] inputArray = input.split("\\s+");
+
+        // Parse the input and add integers to the sorted linked list
+        for (String num : inputArray) {
+            list.add(Integer.parseInt(num));
+        }
+
+        scanner.close();
+
+        boolean found = binarySearch(list, 50);
+
+        System.out.println("Is 50 in the list?: " + found);
     }
 
     public static boolean binarySearch(SinglyLinkedList<Integer> list, int target) {
